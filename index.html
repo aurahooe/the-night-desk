@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Night Desk</title>
+  <meta name="description" content="A small bulletin that turns over every hour. Public slips live on the wall." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="mast">
+    <div class="mast-left">
+      <p class="rule-label">Est. this hour</p>
+      <a class="wordmark" href="#">The Night Desk</a>
+    </div>
+    <div class="mast-mid">
+      <span id="clock" class="clock">—</span>
+      <span class="dot"></span>
+      <span id="hour-key" class="hour-key">loading hour</span>
+    </div>
+    <nav class="mast-right">
+      <button type="button" class="ghost" data-open="wall">The wall</button>
+      <button type="button" class="ghost" data-open="desk" id="desk-btn">Your desk</button>
+      <button type="button" class="ink" id="auth-btn">Sign in</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="edition" id="edition">
+      <p class="kicker">This hour</p>
+      <h1 id="headline">Setting type…</h1>
+      <p class="lede" id="lede"></p>
+      <div id="pin" class="pin hidden"></div>
+    </section>
+
+    <section class="wall" id="wall">
+      <div class="section-head">
+        <h2>Public slips</h2>
+        <p>Anything marked public is printed here. Private slips stay in your desk.</p>
+      </div>
+      <div id="wall-grid" class="grid"></div>
+    </section>
+  </main>
+
+  <aside class="drawer" id="drawer" hidden>
+    <div class="drawer-panel" id="drawer-panel"></div>
+  </aside>
+
+  <footer>
+    <p>The Night Desk reprints on the hour. Nothing here is a newspaper. It is a desk with the lamp left on.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
